@@ -1,0 +1,376 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-y: scroll; /* Permitir a rolagem do corpo */
+    background-color: #1c1c1c; /* Fundo escuro */
+    color: #e0e0e0; /* Texto cinza claro */
+}
+
+body, html{
+    position: relative;
+}
+
+.parte-de-cima {
+    background-color: #004080; /* Azul escuro */
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between; /* Espaço entre os itens */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 10px;
+    border-bottom: 1px solid #fff; /* Adiciona uma borda na parte inferior */
+    border-left: 1px solid transparent; /* Borda transparente na lateral esquerda */
+    border-right: 1px solid transparent; /* Borda transparente na lateral direita */
+    flex-direction: row;
+}
+
+.conteudo {
+    margin-right: auto;
+}
+
+.escola {
+    margin-left: auto; /* Empurra a escola para a direita */
+}
+
+.icon-whatts {
+    position: fixed;
+    bottom: 65px;
+    right: 30px;
+    font-size: 30px;
+    background-color: #01e675;
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-whatts.animate {
+    animation: animate-outline 1s ease-out infinite;
+}
+
+@keyframes animate-outline {
+    from {
+        outline: 0px solid #4f9bf98a;
+    }
+    to {
+        outline: 15px solid #4f9bf900;
+    }
+}
+
+.icon-whatts:hover {
+    background-color: #fff;
+    color: #01e675;
+    font-weight: 900;
+    transition: 0.1s;
+}
+
+/* Ajuste o box-shadow para ser maior e redondo */
+.icon-whatts i {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Box shadow maior */
+    border-radius: 50%; /* Deixa o box shadow redondo */
+}
+
+.conteudo a {
+    margin: 0 5px;
+    color: white;
+}
+
+.escola {
+    font-size: 18px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Preto */
+    color: white;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.div-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+#openMenu {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    display: none;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+}
+
+#menu .btn {
+    margin: 0 10px;
+    font-size: 20pt;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px; /* Espaçamento interno para parecer botões */
+    background-color: #0056b3; /* Fundo azul claro */
+    border-radius: 5px; /* Borda arredondada */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave para cor e sombra */
+}
+
+#menu .btn:hover {
+    background-color: #004080; /* Fundo azul mais escuro ao passar o mouse */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao passar o mouse */
+}
+
+#menu #closeMenu {
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#menu.active #closeMenu {
+    display: block;
+}
+
+.content {
+    display: flex;
+    margin: 10px;
+    gap: 10px;
+    min-height: 0; /* Remova a altura mínima definida anteriormente */
+    align-items: stretch; /* Estende os filhos para ocupar toda a altura */
+}
+
+aside {
+    flex: 1;
+    background-color: #2e2e2e; /* Cinza escuro */
+    padding: 10px;
+    border-radius: 5px;
+    overflow-y: auto; /* Permitir que a barra lateral role */
+    color: #e0e0e0; /* Texto cinza claro */
+}
+
+aside section {
+    margin-bottom: 0px; /* Adiciona espaçamento entre as seções dentro do aside */
+}
+
+aside section > div {
+    background-color: #3c3c3c; /* Um tom mais claro que o fundo do aside */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 8px; /* Borda um pouco mais arredondada */
+    margin: 10px;
+}
+
+aside section > div ul {
+    list-style-type: none; /* Remove os marcadores de lista */
+}
+
+aside section > div ul a {
+    color: #4d94ff; /* Azul claro para os links */
+    display: block;
+    margin-bottom: 20px; /* Espaçamento entre os links */
+}
+
+main {
+    flex: 5;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #444; /* Preto */
+    border: 1px solid #555; /* Cinza médio */
+    overflow-y: auto; /* Permitir que o conteúdo principal role */
+    color: #e0e0e0; /* Texto cinza claro */
+    margin-bottom: 20px;
+}
+
+main section {
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #555; /* Cinza mais claro */
+    border: 1px solid #666; /* Cinza */
+    border-radius: 10px;
+    color: #e0e0e0; /* Texto cinza claro */
+}
+
+.div-data {
+    text-align: center;
+}
+
+.div-titulo {
+    text-align: center;
+    background-color: #0056b3; /* Azul mais claro */
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.jornal {
+    font-size: 35px;
+    border-bottom: 1px solid #0056b3; /* Azul mais claro */
+    margin-bottom: 10px;
+}
+
+.titulo {
+    font-size: 20px;
+    border-bottom: 3px solid #0056b3; /* Azul mais claro */
+}
+
+.subtitulo {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.autor {
+    text-align: center;
+}
+
+.div-conteudo {
+    padding: 20px;
+    display: grid;
+    gap: 25px;
+}
+
+.imagem {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    border: 2px solid #fff; /* Adiciona uma borda branca de 2px */
+    border-radius: 5px; /* Borda arredondada */
+    overflow: hidden; /* Garante que a imagem não ultrapasse a borda */
+}
+
+.img-ia {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+footer {
+    background-color: #336699; /* Azul médio */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    flex-shrink: 0; /* Garante que o rodapé fique na parte inferior */
+}
+
+footer .links a {
+    color: #336699; /* Azul médio */
+    margin: 0 5px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+@media (max-width: 923px) {
+    .parte-de-cima {
+        flex-direction: column;
+        align-items: center;
+    }
+    .conteudo, .escola {
+        text-align: center;
+    }
+}
+
+@media (max-width: 717px) {
+    #openMenu {
+        display: block;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #004080; /* Fundo do menu em azul */
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        animation: slideMenu 0.3s forwards; /* Adiciona uma animação de slide */
+    }
+
+    @keyframes slideMenu {
+        from {
+            transform: translateX(100%); /* Inicia fora da tela à direita */
+        }
+        to {
+            transform: translateX(0); /* Termina na posição inicial */
+        }
+    }
+
+    #menu .btn {
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-bottom: 1px solid #0056b3; /* Azul mais claro */
+        font-size: 24pt;
+        background-color: #0056b3; /* Fundo azul claro */
+        border-radius: 5px; /* Borda arredondada */
+        margin-bottom: 10px; /* Espaçamento entre os botões */
+        transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave para cor e sombra */
+        width: 170px; /* Definindo uma largura fixa */
+    }
+
+    #menu .btn:hover {
+        background-color: #004080; /* Fundo azul mais escuro ao passar o mouse */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona sombra ao passar o mouse */
+    }
+
+    #menu #closeMenu {
+        display: none;
+    }
+
+    #menu.active {
+        display: flex;
+    }
+
+    #menu.active #closeMenu {
+        display: block;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    aside {
+        display: none;
+    }
+}
